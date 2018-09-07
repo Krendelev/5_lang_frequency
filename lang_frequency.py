@@ -12,8 +12,8 @@ def get_most_frequent_words(text):
     transtable = str.maketrans({symb: None for symb in string.punctuation})
     stripped = text.translate(transtable)
     words = (word.lower() for word in stripped.split())
-    TOP = 10
-    return Counter(words).most_common(TOP)
+    top = 10
+    return Counter(words).most_common(top)
 
 
 if __name__ == '__main__':
