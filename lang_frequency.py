@@ -16,6 +16,12 @@ def get_most_frequent_words(text):
     return collections.Counter(words).most_common(words_to_show)
 
 
+def print_list(wordlist):
+    for word, count in wordlist:
+        print('"{0}" occurs {1} times'.format(word, count))
+    return None
+
+
 if __name__ == '__main__':
     try:
         text_from_file = load_data(sys.argv[1])
@@ -27,5 +33,4 @@ if __name__ == '__main__':
     except ValueError:
         print('Not a valid text file')
     else:
-        for word, count in get_most_frequent_words(text_from_file):
-            print('"{0}" occurs {1} times'.format(word, count))
+        print_list(get_most_frequent_words(text_from_file))
