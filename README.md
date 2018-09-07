@@ -4,7 +4,7 @@ Program to count the occurrences of each word in a given text.
 
 ## Getting Started
 
-Program takes plain text file and returns list of 10 words with the most occurrences in that text along with their counts.
+Program takes plaintext file in `UTF-8` encoding and returns list of 10 words with the most occurrences in that text along with their counts.
 
 ```bash
 $ python lang_frequency.py some_text.txt

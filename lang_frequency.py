@@ -1,4 +1,5 @@
 import sys
+import string
 from collections import Counter
 
 
@@ -8,7 +9,9 @@ def load_data(filepath):
 
 
 def get_most_frequent_words(text):
-    words = (w.strip('.,:;"?!-()_').lower() for w in text.split() if w not in '-–')
+    transtable = str.maketrans({s: None for s in string.punctuation})
+    stripped = text.translate(transtable)
+    words = (w.lower() for w in stripped.split())
     return Counter(words).most_common(10)
 
 
