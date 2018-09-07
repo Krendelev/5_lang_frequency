@@ -1,6 +1,6 @@
 import sys
 import string
-from collections import Counter
+import collections
 
 
 def load_data(filepath):
@@ -9,11 +9,11 @@ def load_data(filepath):
 
 
 def get_most_frequent_words(text):
+    words_to_show = 10
     transtable = str.maketrans({symb: None for symb in string.punctuation})
     stripped = text.translate(transtable)
-    words = (word.lower() for word in stripped.split())
-    top = 10
-    return Counter(words).most_common(top)
+    words = (word for word in stripped.lower().split())
+    return collections.Counter(words).most_common(words_to_show)
 
 
 if __name__ == '__main__':
@@ -23,7 +23,9 @@ if __name__ == '__main__':
         print('Please specify path to text file')
     except FileNotFoundError:
         print('File not found')
+# Catch non-text file
     except ValueError:
         print('Not a valid text file')
     else:
-        print(get_most_frequent_words(text_from_file))
+        for word, count in get_most_frequent_words(text_from_file):
+            print('"{0}" occurs {1} times'.format(word, count))
