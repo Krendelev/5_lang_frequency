@@ -8,7 +8,16 @@ Program takes plaintext file in `UTF-8` encoding and returns list of 10 words wi
 
 ```bash
 $ python lang_frequency.py some_text.txt
-[('the', 3734), ('and', 2977), ('a', 1794), ('to', 1708), ('of', 1455), ('he', 1173), ('was', 1162), ('it', 1016), ('in', 935), ('that', 860)]
+ 3736 the
+ 2978 and
+ 1812 a
+ 1708 to
+ 1455 of
+ 1174 he
+ 1162 was
+ 1017 it
+  935 in
+  860 that
 ```
 
 ## Project Goals
